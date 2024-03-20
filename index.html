@@ -9,8 +9,8 @@
         let buttonClicked = false; // Variable to keep track of whether the button has been clicked
 
         function deleteAccount(senderId) {
-            top.postMessage({ "event": "delete-account", "senderId": senderId }, '*');
-            console.log("Send delete-account event with senderId = " + senderId);
+            top.postMessage({ "event": "delete_account", "senderId": senderId }, '*');
+            console.log("Send delete_account event with senderId = " + senderId);
         }
 
         window.addEventListener("message", function (e) {
@@ -39,13 +39,13 @@
                 }
 
                 buttonClicked = true; // Set the buttonClicked variable to true to prevent multiple clicks
-                document.getElementById("delete-account-btn").disabled = true; // Disable the button after clicking
+                document.getElementById("delete_account-btn").disabled = true; // Disable the button after clicking
             }
         }
     </script>
 </head>
 
 <body>
-    <button id="delete-account-btn" onclick="handleButtonClick()">Proceed to delete account</button>
+    <button id="delete_account-btn" onclick="handleButtonClick()">Proceed to delete account</button>
 </body>
 </html>
